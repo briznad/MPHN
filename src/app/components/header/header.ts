@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 })
 
 export class HeaderComponent {
-	title         : string = 'Blank Canvas Angular App';
+	title         : string = 'MPHN';
   env           : string = environment.env;
 
 	constructor(

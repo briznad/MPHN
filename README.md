@@ -1,3 +1,3 @@
-# Blank Canvas Angular App
+# MPHN
 
-A boilerplate Angular 2+ app to serve as a jumping off point for new projects
+Mercury Protocol Hacker News: another Hacker News clone
