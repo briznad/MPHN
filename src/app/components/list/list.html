@@ -1,0 +1,7 @@
+<pagination [listType]="listType" [page]="page" [pageCount]="pageCount"></pagination>
+
+<ul>
+	<li *ngFor="let item of list | async">
+		<item [itemID]="item.$value"></item>
+	</li>
+</ul>

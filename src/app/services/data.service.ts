@@ -34,11 +34,7 @@ export class DataService {
   	return this.getObject(`item/${id}`);
   }
 
-  public getTop() : Observable<any> {
-  	return this.getList('topstories');
-  }
-
-  public getNew() : Observable<any> {
-  	return this.getList('newstories');
+  public getByListType(listType : string) : Observable<any> {
+  	return this.getList(`${listType}stories`);
   }
 }

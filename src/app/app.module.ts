@@ -16,7 +16,9 @@ import { AppComponent }  from './components/app/app';
 import { ModalComponent }  from './components/modal/modal';
 import { SnackBarComponent }  from './components/snack-bar/snack-bar';
 import { HeaderComponent }  from './components/header/header';
-import { TopComponent }   from './components/top/top';
+import { ListComponent }   from './components/list/list';
+import { PaginationComponent }   from './components/pagination/pagination';
+import { ItemComponent }   from './components/item/item';
 
 // Services
 import { DataService } from './services/data.service';
@@ -36,7 +38,9 @@ import { SnackBarService } from './services/snack-bar.service';
     ModalComponent,
     SnackBarComponent,
     HeaderComponent,
-    TopComponent
+    ListComponent,
+    PaginationComponent,
+    ItemComponent
   ],
   providers    : [
     DataService,
