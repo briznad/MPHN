@@ -2,8 +2,6 @@ import { Component, HostBinding } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
 
-import { DataService } from '../../services/data.service';
-
 @Component({
 	selector    : 'header-bar',
 	templateUrl : 'header.html',
@@ -14,7 +12,5 @@ export class HeaderComponent {
 	title         : string = 'MPHN';
   env           : string = environment.env;
 
-	constructor(
-    private dataService : DataService
-  ) {}
+	constructor() {}
 }
