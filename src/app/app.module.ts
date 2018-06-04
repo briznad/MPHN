@@ -7,13 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { environment } from '../environments/environment';
 
+// imports for loading Firebase/AngularFire
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 // components
 import { AppComponent }  from './components/app/app';
 import { ModalComponent }  from './components/modal/modal';
 import { SnackBarComponent }  from './components/snack-bar/snack-bar';
 import { HeaderComponent }  from './components/header/header';
-import { MenuComponent }  from './components/menu/menu';
-import { HomepageComponent }  from './components/homepage/homepage';
+import { TopComponent }   from './components/top/top';
 
 // Services
 import { DataService } from './services/data.service';
@@ -24,15 +27,16 @@ import { SnackBarService } from './services/snack-bar.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   declarations : [
     AppComponent,
     ModalComponent,
     SnackBarComponent,
     HeaderComponent,
-    MenuComponent,
-    HomepageComponent
+    TopComponent
   ],
   providers    : [
     DataService,

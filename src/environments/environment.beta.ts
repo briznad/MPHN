@@ -6,11 +6,11 @@
 export const environment = {
 	env      : 'beta',
 	firebase : {
-		apiKey            : 'dummy-value',
-		authDomain        : 'dummy-value',
-		databaseURL       : 'dummy-value',
-		projectId         : 'dummy-value',
-		storageBucket     : 'dummy-value',
-		messagingSenderId : 'dummy-value'
+		// apiKey            : 'dummy-value',
+		// authDomain        : 'dummy-value',
+		databaseURL       : 'https://hacker-news.firebaseio.com',
+		// projectId         : 'dummy-value',
+		// storageBucket     : 'dummy-value',
+		// messagingSenderId : 'dummy-value'
   }
 };

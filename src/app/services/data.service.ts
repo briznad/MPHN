@@ -1,18 +1,44 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/take';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/observable/zip';
 
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
+
+import {
+  AngularFireDatabase,
+  FirebaseObjectObservable,
+  FirebaseListObservable
+} from 'angularfire2/database';
 
 @Injectable()
 export class DataService {
-  constructor() {}
+	version : string = '/v0/';
 
+  constructor(
+  	private db : AngularFireDatabase
+  ) {}
+
+  private getObject(resource: string) : Observable<any> {
+  	return this.db.object(`${this.version}${resource}`);
+  }
+
+  private getList(resource : string) : Observable<any> {
+  	return this.db.list(`${this.version}${resource}`);
+  }
+
+  public getMax() : Observable<any> {
+  	return this.getObject('maxitem');
+  }
+
+  public getItem(id : string) : Observable<any> {
+  	return this.getObject(`item/${id}`);
+  }
+
+  public getTop() : Observable<any> {
+  	return this.getList('topstories');
+  }
+
+  public getNew() : Observable<any> {
+  	return this.getList('newstories');
+  }
 }
