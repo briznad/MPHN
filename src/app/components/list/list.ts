@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 
 import { DataService } from '../../services/data.service';
@@ -41,15 +40,12 @@ export class ListComponent implements OnInit {
         this.page = page && !isNaN(page) ? page : 1;
 
         // get paginated list of IDs
-        this.list = this.dataService.getByListType(this.listType)
+        this.list = this.dataService.getListByType(this.listType)
           .map(list => {
             this.pageCount = Math.ceil(list.length / this.pageSize);
 
             return list.slice((this.page - 1) * this.pageSize, this.page * this.pageSize);
           });
       });
-
-    this.list
-      .subscribe(data => console.debug(data));
   }
 }

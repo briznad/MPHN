@@ -26,15 +26,11 @@ export class DataService {
   	return this.db.list(`${this.version}${resource}`);
   }
 
-  public getMax() : Observable<any> {
-  	return this.getObject('maxitem');
-  }
-
   public getItem(id : string) : Observable<any> {
   	return this.getObject(`item/${id}`);
   }
 
-  public getByListType(listType : string) : Observable<any> {
+  public getListByType(listType : string) : Observable<any> {
   	return this.getList(`${listType}stories`);
   }
 }

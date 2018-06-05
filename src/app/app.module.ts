@@ -18,6 +18,7 @@ import { SnackBarComponent }  from './components/snack-bar/snack-bar';
 import { HeaderComponent }  from './components/header/header';
 import { ListComponent }   from './components/list/list';
 import { PaginationComponent }   from './components/pagination/pagination';
+import { ListItemComponent }   from './components/list-item/list-item';
 import { ItemComponent }   from './components/item/item';
 
 // Services
@@ -40,6 +41,7 @@ import { SnackBarService } from './services/snack-bar.service';
     HeaderComponent,
     ListComponent,
     PaginationComponent,
+    ListItemComponent,
     ItemComponent
   ],
   providers    : [

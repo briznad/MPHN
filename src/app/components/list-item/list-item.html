@@ -1,0 +1,36 @@
+<ng-container *ngIf="wrappedItem | async; let item">
+	<article *ngIf="showItem(item)">
+		<span class="score">{{ item.score }}</span>
+
+		<div *ngIf="listType !== 'ask'; then externalLink; else internalLink"></div>
+
+		<ng-template #externalLink>
+			<a
+				class="title"
+				href="{{ item.url }}"
+				target="_blank"
+				rel="noopener"
+			>{{ item.title }}</a>
+
+			<span class="host">({{ getDomain(item.url) }})</span>
+		</ng-template>
+
+		<ng-template #internalLink>
+			<a class="title" routerLink="/item/{{ item.id }}">{{ item.title }}</a>
+		</ng-template>
+
+		<div class="meta">
+			<span class="by">
+	      by <a href="https://news.ycombinator.com/user?id={{ item.by }}">{{ item.by }}</a>
+	    </span>
+
+	    <span class="time">
+	      &nbsp;{{ getLapsedTime(item.time) }} ago
+	    </span>
+
+	    <span class="comments" *ngIf="item.kids">
+	      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a routerLink="/item/{{ item.id }}">{{ item.kids.length }} comment{{ item.kids.length > 1 ? 's' : '' }}</a>
+	    </span>
+	  </div>
+	</article>
+</ng-container>
