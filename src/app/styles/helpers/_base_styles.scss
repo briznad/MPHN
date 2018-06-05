@@ -64,31 +64,3 @@ textarea {
 }
 
 /* /helper styles */
-
-/* active menu style */
-
-header-bar {
-  &.menu-active {
-    .menu-wrapper {
-      transform: translateX(100%);
-    }
-
-    + main {
-      transform: translateX(165px);
-
-      > * {
-        display: block;
-        opacity: 0.5;
-      }
-    }
-  }
-
-  &.--animate {
-    .menu-wrapper,
-    + main {
-      transition: transform 250ms ease-in-out;
-    }
-  }
-}
-
-/* /active menu style */

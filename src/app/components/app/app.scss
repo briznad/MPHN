@@ -22,6 +22,10 @@ footer {
 
 main {
 	flex: 1 0 auto;
+
+	@include md {
+		padding-bottom: 2em;
+	}
 }
 
 footer {}
