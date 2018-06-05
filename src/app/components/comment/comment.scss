@@ -54,3 +54,15 @@ a {
 .byline {
   margin-bottom: 0.75em;
 }
+
+.text {
+  &,
+  ::ng-deep p {
+    line-height: 1.45em;
+  }
+
+  ::ng-deep p {
+    margin-top: 0.8em;
+    margin-bottom: 0;
+  }
+}
