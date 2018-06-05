@@ -1,0 +1,43 @@
+<article
+	*ngIf="wrappedComment | async; let comment"
+	[class.nested]="nested"
+	[class.collapsed-children]="collapsedChildren"
+>
+	<div class="parent-wrapper">
+		<div class="byline">
+			<span class="by">
+		    <a href="https://news.ycombinator.com/user?id={{ comment.by }}">{{ comment.by }}</a>
+		  </span>
+
+		  <span class="time">
+		    &nbsp;{{ getLapsedTime(comment.time) }} ago
+		  </span>
+		</div>
+
+		<div class="text" [innerHTML]="comment.text"></div>
+
+		<ng-container *ngIf="comment.kids">
+			<ng-container *ngIf="comment.kids.length; let count">
+				<button
+					type="button"
+					class="toggle-visible"
+					[class.collapsed]="collapsedChildren"
+					(click)="collapsedChildren = !collapsedChildren"
+					title="{{ collapsedChildren ? 'show ' + count + ' collapsed' : 'collapse ' + count }} comment{{ count > 1 ? 's' : '' }}"
+				>
+					<ng-container *ngIf="!collapsedChildren; else collapsedBlock">
+						[-] <span class="visually-hidden">collapse {{ count }} comment{{ count > 1 ? 's' : '' }}</span>
+					</ng-container>
+
+					<ng-template #collapsedBlock>
+						[+] {{ count }} repl{{ count > 1 ? 'ies' : 'y' }} collapsed
+					</ng-template>
+				</button>
+			</ng-container>
+		</ng-container>
+	</div>
+
+	<ng-container *ngIf="comment.kids && !collapsedChildren">
+		<comment *ngFor="let commentID of comment.kids" [commentID]="commentID" [nested]="true"></comment>
+	</ng-container>
+</article>

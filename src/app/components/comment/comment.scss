@@ -1,0 +1,56 @@
+@import 'helpers/helper';
+
+:host {
+  display: block;
+
+  // indent nested comments
+  comment & {
+    margin-left: 1em;
+  }
+}
+
+article {
+  display: block;
+  margin-top: 1em;
+  padding-top: 0.75em;
+  border-top: 1px solid #eee;
+
+  &.nested {
+    margin-top: 1.5em;
+    padding-top: 1em;
+  }
+
+  &.collapsed-children {
+    padding-bottom: 1.75em;
+  }
+}
+
+.parent-wrapper {
+  position: relative;
+}
+
+.toggle-visible {
+  position: absolute;
+  bottom: -36px;
+  left: -6px;
+  padding: 0.35em 0.45em;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8em;
+
+  &.collapsed {
+    width: calc(100% + 6px);
+    background-color: rgba($amethyst, 0.1);
+  }
+}
+
+a {
+  text-decoration: underline;
+}
+
+.byline {
+  margin-bottom: 0.75em;
+}
