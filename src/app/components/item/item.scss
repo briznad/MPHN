@@ -1,0 +1,36 @@
+@import 'helpers/helper';
+
+a {
+	text-decoration: underline;
+}
+
+.item {
+	background-color: white;
+  padding: 1.35em 2em 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	margin-bottom: 0;
+}
+
+.meta {
+	margin-top: 0.5em;
+}
+
+.comments {
+	background-color: white;
+  margin-top: 1em;
+  padding: 0 2em 0.5em;
+}
+
+.comment-count {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.comment {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-top: 1px solid #eee;
+}

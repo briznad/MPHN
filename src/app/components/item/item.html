@@ -1,0 +1,38 @@
+<ng-container *ngIf="wrappedItem | async; let item">
+	<article class="item">
+		<h2 class="title">{{ item.title }}</h2>
+
+		<div class="meta">
+			<span class="score">{{ item.score }} points</span>
+
+			<span class="by">
+	      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;by <a href="https://news.ycombinator.com/user?id={{ item.by }}">{{ item.by }}</a>
+	    </span>
+
+	    <span class="time">
+	      &nbsp;{{ getLapsedTime(item.time) }} ago
+	    </span>
+	  </div>
+	</article>
+
+	<section *ngIf="item.kids" class="comments">
+		<h3 class="comment-count">{{ item.kids.length }} comment{{ item.kids.length > 1 ? 's' : '' }}</h3>
+
+		<!-- create recursive <comment> component -->
+
+		<article *ngFor="let comment of item.kids" class="comment">
+			<span class="by">
+	      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;by <a href="https://news.ycombinator.com/user?id={{ item.by }}">{{ item.by }}</a>
+	    </span>
+
+	    <span class="time">
+	      &nbsp;{{ getLapsedTime(item.time) }} ago
+	    </span>
+
+			<div class="comment-text">
+				comment
+			</div>
+
+		</article>
+	</section>
+</ng-container>

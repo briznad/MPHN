@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ListComponent }   from './components/list/list';
+import { ItemComponent }   from './components/item/item';
 
 const routes : Routes = [
   // top
@@ -40,7 +41,7 @@ const routes : Routes = [
     path: 'ask/:page',
     component: ListComponent
   },
-  // jobs
+  // job
   {
     path: 'job',
     component: ListComponent
@@ -48,6 +49,20 @@ const routes : Routes = [
   {
     path: 'job/:page',
     component: ListComponent
+  },
+  // best
+  {
+    path: 'best',
+    component: ListComponent
+  },
+  {
+    path: 'best/:page',
+    component: ListComponent
+  },
+  // item
+  {
+    path: 'item/:id',
+    component: ItemComponent
   },
   // homepage redirect
   { path: '',
