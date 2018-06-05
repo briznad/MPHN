@@ -1,0 +1,22 @@
+<ng-container *ngIf="wrappedUser | async; let user">
+	<article>
+		<dl>
+			<dt><h2>User:</h2></dt>
+			<dd><h2>{{ user.id }}</h2></dd>
+
+			<dt>Created:</dt>
+			<dd>{{ getLapsedTime(user.created) }} ago</dd>
+
+			<dt>Karma:</dt>
+			<dd>{{ user.karma }}</dd>
+		</dl>
+
+		<div *ngIf="user.about" class="bio" [innerHTML]="user.about"></div>
+
+	  <div class="links">
+		  <a href="https://news.ycombinator.com/submitted?id={{ user.id }}">submissions</a>
+
+		  <a href="https://news.ycombinator.com/threads?id={{ user.id }}">comments</a>
+		</div>
+	</article>
+</ng-container>

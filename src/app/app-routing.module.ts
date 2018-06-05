@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ListComponent }   from './components/list/list';
 import { ItemComponent }   from './components/item/item';
+import { UserComponent }   from './components/user/user';
 
 const routes : Routes = [
   // top
@@ -63,6 +64,11 @@ const routes : Routes = [
   {
     path: 'item/:id',
     component: ItemComponent
+  },
+  // user
+  {
+    path: 'user/:username',
+    component: UserComponent
   },
   // homepage redirect
   { path: '',

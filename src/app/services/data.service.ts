@@ -26,11 +26,15 @@ export class DataService {
   	return this.db.list(`${this.version}${resource}`);
   }
 
+  public getListByType(listType : string) : Observable<any> {
+  	return this.getList(`${listType}stories`);
+  }
+
   public getItem(id : string) : Observable<any> {
   	return this.getObject(`item/${id}`);
   }
 
-  public getListByType(listType : string) : Observable<any> {
-  	return this.getList(`${listType}stories`);
+  public getUser(username : string) : Observable<any> {
+  	return this.getObject(`user/${username}`);
   }
 }

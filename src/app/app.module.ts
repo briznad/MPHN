@@ -21,6 +21,7 @@ import { PaginationComponent }   from './components/pagination/pagination';
 import { ListItemComponent }   from './components/list-item/list-item';
 import { ItemComponent }   from './components/item/item';
 import { CommentComponent }   from './components/comment/comment';
+import { UserComponent }   from './components/user/user';
 
 // Services
 import { DataService } from './services/data.service';
@@ -44,7 +45,8 @@ import { SnackBarService } from './services/snack-bar.service';
     PaginationComponent,
     ListItemComponent,
     ItemComponent,
-    CommentComponent
+    CommentComponent,
+    UserComponent
   ],
   providers    : [
     DataService,

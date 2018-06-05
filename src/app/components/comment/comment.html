@@ -6,7 +6,7 @@
 	<div class="parent-wrapper">
 		<div class="byline">
 			<span class="by">
-		    <a href="https://news.ycombinator.com/user?id={{ comment.by }}">{{ comment.by }}</a>
+		    <a [routerLink]="['/user', comment.by]">{{ comment.by }}</a>
 		  </span>
 
 		  <span class="time">
