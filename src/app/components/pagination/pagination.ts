@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class PaginationComponent {
-	@Input() listType  : number;
+	@Input() listType  : string;
 	@Input() page      : number;
 	@Input() pageCount : number;
 }

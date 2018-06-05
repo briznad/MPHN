@@ -1,11 +1,13 @@
-<a
-	[routerLink]="['/' + listType, page - 1]"
-	[class.disabled]="page <= 1"
->&lt; prev</a>
+<nav>
+	<a
+		[routerLink]="['/' + listType, page - 1]"
+		[class.disabled]="page <= 1"
+	>&lt; prev</a>
 
-<span>{{ page }}/{{ pageCount }}</span>
+	<span>{{ page }}/{{ pageCount }}</span>
 
-<a
-	[routerLink]="['/' + listType, page + 1]"
-	[class.disabled]="page >= pageCount"
->more &gt;</a>
+	<a
+		[routerLink]="['/' + listType, page + 1]"
+		[class.disabled]="page >= pageCount"
+	>more &gt;</a>
+</nav>
